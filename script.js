@@ -1,19 +1,33 @@
-let display = document.getElementById("display");
+let input = "";
 
-function appendValue(value) {
-  display.value += value;
+function appendValue(val) {
+  input += val;
+  document.getElementById("message1").textContent = input;
+  document.getElementById("message2").textContent = "";
 }
 
 function clearDisplay() {
-  display.value = "";
+  input = "";
+  document.getElementById("message1").textContent = "0";
+  document.getElementById("message2").textContent = "";
+}
+
+function deleteLast() {
+  input = input.slice(0, -1);
+  document.getElementById("message1").textContent = input || "0";
+  document.getElementById("message2").textContent = "";
 }
 
 function calculate() {
-  // Romantic twist!
-  display.value = "I LOVE YOU BABYYY ❤️";
-}
-{
-  function calculate() {
-  // Romantic twist!
-  display.value = "Jaannn maan bhi jao ab ❤️";
+  try {
+    let result = eval(input); // calculate but not shown
+    if (result !== undefined) {
+      document.getElementById("message1").textContent = "I LOVE YOU BABYYY ❤️";
+      document.getElementById("message2").textContent = "Jaannn maan bhi jao ab ❤️";
+      input = ""; // Reset input after showing message
+    }
+  } catch {
+    document.getElementById("message1").textContent = "Error";
+    document.getElementById("message2").textContent = "";
+  }
 }
