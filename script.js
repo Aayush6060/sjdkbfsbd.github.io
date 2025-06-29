@@ -10,5 +10,6 @@ function clearDisplay() {
 
 function calculate() {
   // Romantic twist!
-  display.value = "I LOVE YOU BABYYY ❤️\nJaannn maan bhi jao ab ❤️";
+  display.value = "I LOVE YOU BABYYY ❤️"
+               "Jaannn maan bhi jao ab ❤️";
 }
